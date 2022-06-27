@@ -1,33 +1,50 @@
 import pyautogui as pi
-import PySimpleGUI as sg
 from time import sleep
 
-qt = []
-for i in range(1, 1001):
-    qt.append(int(i))
+pi.click(1802, 14, duration=1)
+sleep(1)
+pi.doubleClick(1028, 439, duration=1)
+sleep(1)
+pi.press('win')
+sleep(1)
+pi.write('chrome')
+sleep(1)
+pi.press('enter')
+sleep(1)
+pi.write('https://web.whatsapp.com/')
+sleep(1)
+pi.press('enter')
+sleep(3)
+pi.click(328, 415, duration=1) #clique na cvr
+sleep(1)
+pi.click(761, 1055, duration=1) #clique no app
+sleep(1)
+pi.click(789, 720, duration=1) #clique no envia
+sleep(1)
+pi.click(851, 579, duration=1) #clica na msg de erro
+sleep(1)
+pi.click(923, 377, duration=1)
+sleep(1)
+pi.dragRel(600, 0, duration=1)
 
-sg.theme('GreenTan')
-layout = [
-    [sg.Text('Quantas mensagens deseja enviar?', font=('bold, 15')), sg.Combo(qt, key='qtde', size=(10, 1))],
-    [sg.Text('Digite a mensagem aqui!', font=('bold, 15'))],
-    [sg.Multiline(size=(36, 10), key='msg', font=('bold, 15'))],
-    [sg.Button('Enviar', font=('bold, 15'))]
-]
 
-janela = sg.Window('BOT', layout)
-while True:
-    events, values = janela.read()
-    if events == sg.WIN_CLOSED:
-        break
-    if values['qtde'] == '':
-        sg.popup_error('Selecione quantas mensagens deseja enviar!', font=('bold, 12'))
-    elif values['msg'] == '':
-        sg.popup_error('Digite a mensagem!!!', font=('bold, 12'))
-    else:
-        a = values['qtde']
-        if events == 'Enviar':
-            sleep(2)
-            for i in range(a):
-                pi.write(values['msg'])
-                pi.press('Enter')
-            sg.popup('SPAM EFETUADO COM SUCESSO!!!', font=('bold, 12'))
+
+sleep(1)
+
+
+pi.click(1765, 410, duration=1)
+sleep(1)
+pi.click(1710, 498, duration=1)
+sleep(1)
+pi.click(1710, 498, duration=1)
+sleep(1)
+pi.write('Ola, eu sou um BOT MALVADO que esta usando um bot para enviar varias mensagens repetidas para voce')
+sleep(1)
+pi.click(1392, 722, duration=1)
+sleep(1)
+pi.click(1032, 964, duration=0.50)
+sleep(2)
+pi.click(869, 585, duration=1)
+
+
+
